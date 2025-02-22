@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="686.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.librarymanagmentsystem.controller.Member.MemberManagmentFormController">
+   <children>
+      <AnchorPane prefHeight="696.0" prefWidth="712.0" style="-fx-background-color: #fad390;">
+         <children>
+            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#720f1c" height="88.0" layoutX="-1.0" layoutY="-11.0" width="713.0" />
+            <Label layoutX="200.0" layoutY="23.0" text="Member Management" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtIdField" layoutX="182.0" layoutY="98.0" prefHeight="27.0" prefWidth="182.0" promptText="Member ID" style="-fx-background-color: #FFFFFF; -fx-border-color: #DADADA;" />
+            <TextField fx:id="txtNameField" layoutX="182.0" layoutY="150.0" prefHeight="27.0" prefWidth="182.0" promptText="Member Name" style="-fx-background-color: #FFFFFF; -fx-border-color: #DADADA;" />
+            <TextField fx:id="txtContactField" layoutX="182.0" layoutY="200.0" prefHeight="27.0" prefWidth="182.0" promptText="Contact" style="-fx-background-color: #FFFFFF; -fx-border-color: #DADADA;" />
+            <Label layoutX="47.0" layoutY="102.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14; -fx-text-fill: #333333;" text="Member ID:">
+               <font>
+                  <Font name="System Bold Italic" size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="204.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14; -fx-text-fill: #333333;" text="Contact Info :" />
+            <Label layoutX="47.0" layoutY="154.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14; -fx-text-fill: #333333;" text="Member Name:" />
+            <Label layoutX="43.0" layoutY="253.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14; -fx-text-fill: #333333;" text="MembershipDate :" />
+            <Button layoutX="454.0" layoutY="97.0" mnemonicParsing="false" onAction="#addaCustomerOnAction" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-size: 14;" text="Add" />
+            <Button layoutX="454.0" layoutY="247.0" mnemonicParsing="false" onAction="#deleteCustomerOnAction" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-size: 14;" text="Delete" />
+            <Button layoutX="454.0" layoutY="199.0" mnemonicParsing="false" onAction="#updateCustomerOnAction" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #F39C12; -fx-text-fill: white; -fx-font-size: 14;" text="Update" />
+            <Button layoutX="454.0" layoutY="149.0" mnemonicParsing="false" onAction="#searchCustomerOnAction" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #1ABC9C; -fx-text-fill: white; -fx-font-size: 14;" text="Search" />
+            <TableView fx:id="tblCustomer" layoutX="17.0" layoutY="326.0" prefHeight="297.0" prefWidth="678.0" style="-fx-background-color: white; -fx-border-color: #DADADA;">
+               <columns>
+                  <TableColumn fx:id="cusIdCol" prefWidth="102.39999389648438" text="Member ID" />
+                  <TableColumn fx:id="cusNameCol" prefWidth="204.79998779296875" text="Member Name" />
+                  <TableColumn fx:id="cusContactCol" prefWidth="178.4000244140625" text="Member Contact" />
+                  <TableColumn fx:id="cusMembershipDateCol" prefWidth="191.20001220703125" text="Membership Date" />
+               </columns>
+            </TableView>
+            <DatePicker fx:id="txtMembershipDateField" layoutX="182.0" layoutY="247.0" prefHeight="30.0" prefWidth="182.0" />
+            <Button layoutX="544.0" layoutY="644.0" mnemonicParsing="false" onAction="#loadTBLOnAction" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: #e55039; -fx-text-fill: white; -fx-font-size: 14;" text="Load Tabel" />
+            <Button layoutX="411.0" layoutY="644.0" mnemonicParsing="false" onAction="#btnReportOnAction" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #e55039; -fx-text-fill: white; -fx-font-size: 14;" text="Reports" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

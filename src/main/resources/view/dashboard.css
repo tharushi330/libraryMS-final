@@ -1,0 +1,97 @@
+/* Color Palette */
+.root {
+    -primary-color: #2C3E50;
+    -secondary-color: #3498DB;
+    -accent-color: #2980B9;
+    -background-color: #F4F6F9;
+    -text-color: #2C3E50;
+    -success-color: #27AE60;
+    -warning-color: #F1C40F;
+    -danger-color: #E74C3C;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    -fx-background-color: -primary-color;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+}
+
+.logo-text {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.logo-subtext {
+    -fx-text-fill: #BDC3C7;
+    -fx-font-size: 13px;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-padding: 12px 20px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+    -fx-graphic-text-gap: 15px;
+}
+
+.nav-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn:armed {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content Area */
+.main-content {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+}
+
+/* Stats Cards */
+.stats-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 6, 0, 0, 2);
+    -fx-pref-width: 200px;
+    -fx-pref-height: 120px;
+}
+
+.stats-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 8, 0, 0, 3);
+}
+
+.card-title {
+    -fx-text-fill: #7F8C8D;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+}
+
+.card-value {
+    -fx-text-fill: -primary-color;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.card-icon {
+    -fx-opacity: 0.8;
+}
+
+/* Logout Button */
+.logout-btn {
+    -fx-text-fill: #E74C3C;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.logout-btn:hover {
+    -fx-text-fill: #C0392B;
+    -fx-underline: true;
+}

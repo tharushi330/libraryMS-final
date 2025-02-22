@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="685.0" prefWidth="943.0" style="-fx-background-color: #F4F6F9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.librarymanagmentsystem.controller.dashboard.DashboardFormController">
+    <stylesheets>
+        <URL value="@dashboard.css" />
+    </stylesheets>
+
+    <children>
+        <!-- Left Navigation Panel -->
+        <Pane prefHeight="686.0" prefWidth="260.0" style="-fx-background-color: #cf6a87;" styleClass="sidebar">
+            <children>
+                <!-- Logo Section -->
+                <ImageView fitHeight="64.0" fitWidth="72.0" layoutX="22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/bookshelf.png" />
+               </image>
+                </ImageView>
+                <Label layoutX="93.0" layoutY="20.0" prefHeight="35.0" prefWidth="110.0" styleClass="logo-text" text="BookLib" />
+                <Label layoutX="93.0" layoutY="55.0" styleClass="logo-subtext" text="Library Management" />
+
+                <!-- Navigation Buttons -->
+                <JFXButton layoutX="31.0" layoutY="120.0" onAction="#btnDashBoardOnAction" styleClass="nav-btn" text="Dashboard">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/dashboard.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+                </JFXButton>
+                <JFXButton layoutX="31.0" layoutY="180.0" onAction="#btnMemberManagmentOnAction" styleClass="nav-btn" text="Members Management">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/members.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton layoutX="31.0" layoutY="240.0" onAction="#btnBookManagmentOnAction" styleClass="nav-btn" text="Books Management">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/books.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton layoutX="31.0" layoutY="300.0" onAction="#btnBorrowOnAction" styleClass="nav-btn" text="Borrow Books">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/borrow.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton layoutX="31.0" layoutY="360.0" onAction="#btnReturnOnAction" styleClass="nav-btn" text="Return Books">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton layoutX="31.0" layoutY="420.0" onAction="#btnReportsOnAction" styleClass="nav-btn" text="Reports">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/reports.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+
+                <!-- Logout Section -->
+                <Label fx:id="logOutTxt" layoutX="107.0" layoutY="647.0" onMouseClicked="#logoutTxtOnAction" styleClass="logout-btn" text="Log Out" />
+                <ImageView fitHeight="64.0" fitWidth="100.0" layoutX="101.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-logout-64.png" />
+               </image>
+                </ImageView>
+            </children>
+        </Pane>
+
+        <!-- Main Content Area -->
+        <AnchorPane fx:id="dashboardAnchorPaneId" layoutX="262.0" prefHeight="686.0" prefWidth="701.0" styleClass="main-content">
+            <!-- Add your dashboard cards here -->
+            <children>
+                <Pane layoutX="20.0" layoutY="20.0" styleClass="stats-card">
+                    <children>
+                        <Label layoutX="20.0" layoutY="15.0" styleClass="card-title" text="Total Books" />
+                        <Label layoutX="20.0" layoutY="55.0" styleClass="card-value" text="2,548" />
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="200.0" layoutY="25.0" styleClass="card-icon">
+                            <image>
+                                <Image url="@../images/books.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+
+                <Pane layoutX="250.0" layoutY="20.0" styleClass="stats-card">
+                    <children>
+                        <Label layoutX="20.0" layoutY="15.0" styleClass="card-title" text="Active Members" />
+                        <Label layoutX="20.0" layoutY="55.0" styleClass="card-value" text="1,234" />
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="200.0" layoutY="25.0" styleClass="card-icon">
+                            <image>
+                                <Image url="@../images/members.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

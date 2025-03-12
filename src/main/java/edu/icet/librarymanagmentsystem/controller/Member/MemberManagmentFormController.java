@@ -42,21 +42,28 @@ public class MemberManagmentFormController implements Initializable {
 
     MemberService memberService= ServiceFactory.getInstance().getServiceType(ServiceType.MEMBER);
 
+    private boolean isValidContact(String contact) {
+        return contact.matches("\\d{10}"); // Ensures exactly 10 digits
+    }
+
     public void addaCustomerOnAction(ActionEvent actionEvent) throws SQLException {
         try {
-            // Create a MemberDTO object from the form inputs
             String name = txtNameField.getText();
             String contact = txtContactField.getText();
             LocalDate date = txtMembershipDateField.getValue();
 
-            Member member = new Member(null, name, contact, date);
+            if (!isValidContact(contact)) {
+                new Alert(Alert.AlertType.WARNING, "Invalid contact number! Must be exactly 10 digits.").show();
+                return;
+            }
 
-            // Call the service layer to add the member
+            Member member = new Member(null, name, contact, date);
             boolean isAdded = memberService.addMember(member);
+
             if(isAdded){
-                new Alert(Alert.AlertType.INFORMATION, "Member Addded Scusess !").show();
-            }else{
-                new Alert(Alert.AlertType.INFORMATION, "Member Added Failed!").show();
+                new Alert(Alert.AlertType.INFORMATION, "Member Added Successfully!").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Member Addition Failed!").show();
             }
 
             refreshTable();
@@ -64,7 +71,6 @@ public class MemberManagmentFormController implements Initializable {
             loadTheId();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Show an error message to the user
         }
     }
 
@@ -113,27 +119,28 @@ public class MemberManagmentFormController implements Initializable {
 
     public void updateCustomerOnAction(ActionEvent actionEvent) {
         try {
-            // Get the updated member details from the form fields
             String memberId = txtIdField.getText().trim();
             String name = txtNameField.getText();
             String contact = txtContactField.getText();
             LocalDate date = txtMembershipDateField.getValue();
 
-            if (memberId.isEmpty() || name.isEmpty()||contact.isEmpty()) {
-                new Alert(Alert.AlertType.WARNING, "Please Search Before to Update !!!!").show();
+            if (memberId.isEmpty() || name.isEmpty() || contact.isEmpty()) {
+                new Alert(Alert.AlertType.WARNING, "Please search before updating!").show();
                 return;
             }
 
+            if (!isValidContact(contact)) {
+                new Alert(Alert.AlertType.WARNING, "Invalid contact number! Must be exactly 10 digits.").show();
+                return;
+            }
 
             Member member = new Member(memberId, name, contact, date);
-
-
             boolean isUpdated = memberService.updateMember(member);
 
             if (isUpdated) {
                 new Alert(Alert.AlertType.INFORMATION, "Member Updated Successfully!").show();
             } else {
-                new Alert(Alert.AlertType.INFORMATION, "Member Update Failed!").show();
+                new Alert(Alert.AlertType.ERROR, "Member Update Failed!").show();
             }
 
             refreshTable();
